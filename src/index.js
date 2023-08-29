@@ -7,8 +7,9 @@ const client = createClient({
   url: "URL",
   webSocketImpl: require("ws"),
   connectionParams: {
-    Authorization:
-      "Bearer TOKEN",
+    headers: {
+      Authorization: "Bearer TOKEN",
+    },
   },
 });
 
@@ -22,10 +23,8 @@ const client = createClient({
     }`,
     variables: { id: "TRANSACTION_ID" },
   });
-  console.warn(subscription, "subscription");
   for await (const event of subscription) {
-    console.warn(event, "event");
-    break;
+    console.warn(JSON.stringify(event), "event");
   }
 })().catch((error) => {
   console.warn(error, "error");
