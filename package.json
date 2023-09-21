@@ -40,7 +40,7 @@
     "prettier": "^1.18.2"
   },
   "dependencies": {
-    "graphql": "^16.8.0",
+    "graphql": "^16.8.1",
     "graphql-ws": "^5.14.0",
     "ws": "^8.13.0"
   }
